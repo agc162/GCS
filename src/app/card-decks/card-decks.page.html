@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Card-decks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Classes</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let CardDeck of CardDecks"> 
+      <ion-avatar slot="start">
+        <img [src]="'../../assets/images/' + CardDeck + '.png'"/>
+      </ion-avatar>
+      <ion-label>
+        <h2> {{CardDeck}} </h2>
+      </ion-label>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>

@@ -12,6 +12,7 @@ export class CardDecksPage implements OnInit {
 
   cardDecks: CardDeck [];
   selectedCDs: string[] = [];
+  selectedCs: string[] = [];
 
   constructor() { }
 
@@ -29,12 +30,22 @@ export class CardDecksPage implements OnInit {
 
 
   select(name: string) {
-    var esta = this.selectedCDs.indexOf(name);
+    const esta = this.selectedCDs.indexOf(name);
 
-    if( esta === -1 ) {
+    if (esta === -1) {
       this.selectedCDs.push(name);
+      this.showCards(name);
     } else {
       this.selectedCDs.splice(esta, 1);
+      this.selectedCs = [];
+    }
+  }
+
+  showCards(name: string) {
+    for (const cardDeck of this.cardDecks) {
+      if (cardDeck.name === name) {
+        this.selectedCs = cardDeck.cards;
+      }
     }
   }
 

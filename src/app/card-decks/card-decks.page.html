@@ -7,7 +7,15 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     
-    <app-card-deck *ngFor="let cardDeck of cardDecks" [myCardDeck]="cardDeck"></app-card-deck>
+    <app-card-deck *ngFor="let cardDeck of cardDecks" 
+      [myCardDeck]="cardDeck" (clicked)="select($event)"> </app-card-deck>
 
   </ion-list>
+
+  <p>
+    Selected Card decks:
+    <span *ngFor="let name of selectedCDs">
+      {{name}}&nbsp;
+    </span>
+  </p>
 </ion-content>

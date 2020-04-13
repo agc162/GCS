@@ -4,20 +4,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   
   <ion-list>
-    <ion-list-header>
-      <ion-label>Classes</ion-label>
-    </ion-list-header>
-    <ion-item *ngFor="let CardDeck of CardDecks"> 
+
+    <ion-item *ngFor="let cardDeck of cardDecks"> 
       <ion-avatar slot="start">
-        <img [src]="'../../assets/images/' + CardDeck + '.png'"/>
+        <img [src]="'./assets/images/' + cardDeck.image"/>
       </ion-avatar>
       <ion-label>
-        <h2> {{CardDeck}} </h2>
+        <h2> {{cardDeck.name}} </h2>
       </ion-label>
-    </ion-item>
-    
+    </ion-item> 
+
   </ion-list>
+
 </ion-content>

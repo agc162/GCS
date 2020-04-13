@@ -5,18 +5,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
   <ion-list>
-
-    <ion-item *ngFor="let cardDeck of cardDecks"> 
-      <ion-avatar slot="start">
-        <img [src]="'./assets/images/' + cardDeck.image"/>
-      </ion-avatar>
-      <ion-label>
-        <h2> {{cardDeck.name}} </h2>
-      </ion-label>
-    </ion-item> 
+    
+    <app-card-deck *ngFor="let cardDeck of cardDecks" [myCardDeck]="cardDeck"></app-card-deck>
 
   </ion-list>
-
 </ion-content>

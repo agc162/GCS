@@ -1,3 +1,4 @@
+import { CardService } from './../card.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,13 +9,17 @@ import { CardDecksPageRoutingModule } from './card-decks-routing.module';
 
 import { CardDecksPage } from './card-decks.page';
 
+
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CardDecksPageRoutingModule
+    CardDecksPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [CardDecksPage]
+  declarations: [CardDecksPage],
 })
 export class CardDecksPageModule {}

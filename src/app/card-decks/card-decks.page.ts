@@ -26,9 +26,10 @@ export class CardDecksPage {
   }
 
   private getCardDecks() {
-    this.cardSrv.getAllCardDecks().subscribe((cdSrv: CardDeck[]) => {
+    this.cardSrv.getAllCardDecks().subscribe(
+      (cdSrv: CardDeck[]) => {
         this.extractAllowedDecks(cdSrv);
-      });
+      }
+    );
   }
-
 }

@@ -1,4 +1,4 @@
-import { CardService } from './../card.service';
+import { CardListComponent } from './../components/card-list/card-list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     CardDecksPageRoutingModule,
     HttpClientModule
   ],
-  declarations: [CardDecksPage],
+  declarations: [
+    CardDecksPage,
+    CardListComponent
+  ]
 })
 export class CardDecksPageModule {}

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="!loginOk">
+  <form [formGroup]="loginForm">
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Tu correo
+      </ion-label>
+      <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('validator')">
+    </p>
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="lock-closed" item-start></ion-icon>
+        Tu contraseña
+      </ion-label>
+      <ion-input color="secondary" type="password" formControlName="clave"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="loginForm.get('clave').touched && loginForm.get('clave').hasError('clave')"> </p>
+
+    <div>
+      <ion-button [disabled]="!loginForm.valid" icon-left size="medium" expand="full" shape="round" color="dark"
+        (click)="doLogin()" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Entrar
+      </ion-button>
+    </div>
+  </form>
+</ion-content>
+
+<ion-content [fullscreen]="true" *ngIf="loginOk">
+  <ion-card>
+    <h1>
+      Login enviado!
+    </h1>
+    <p style="color:dodgerblue">
+      <strong>E-mail</strong> {{ email }}
+    </p>
+    <p style="color:dodgerblue">
+      <strong>Clave</strong> {{ clave }}
+    </p>
+  </ion-card>
+</ion-content>

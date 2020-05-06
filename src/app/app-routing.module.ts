@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'cards/card-listing/:CardDeckGroup/:CardDeck',
+    loadChildren: () => import('./card-listing/card-listing.module').then( m => m.CardListingPageModule)
+  },
+  {
     path: 'card-decks',
     loadChildren: () => import('./card-decks/card-decks.module').then( m => m.CardDecksPageModule)
   },

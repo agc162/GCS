@@ -22,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   declarations: [
     CardDecksPage,
-    CardListComponent
+    CardListComponent,
   ]
 })
 export class CardDecksPageModule {}

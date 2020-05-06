@@ -11,6 +11,13 @@ export class CardListComponent implements OnInit {
 
   @Input() listName: string;
 
+
+  @Input() navigateTo: any;
+
+  generateURL(group: string, deck: string) {
+    return '/cards/card-listing/' + group + '/' + deck;
+  }
+
   constructor() {
   }
 

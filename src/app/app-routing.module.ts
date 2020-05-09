@@ -4,11 +4,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
-    path: 'cards/card-listing/:CardDeckGroup/:CardDeck',
-    loadChildren: () => import('./card-listing/card-listing.module').then( m => m.CardListingPageModule)
+    path: 'cards',
+    loadChildren: () => import('./card-decks/card-decks.module').then( m => m.CardDecksPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'card-decks',

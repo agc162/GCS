@@ -26,6 +26,6 @@ export class CardService {
 
   public getCardByDeck(cardDeckGroup: string, cardDeck: string): Observable<Card[]> {
     return this.http.get<Card[]>(
-      this.HS_API_URL + '/cards/' + cardDeckGroup + '/' + cardDeck, {headers: this.headers});
+      this.HS_API_URL + 'cards/' + cardDeckGroup + '/' + cardDeck, {headers: this.headers});
   }
 }

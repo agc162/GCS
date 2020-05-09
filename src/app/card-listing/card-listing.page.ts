@@ -16,8 +16,8 @@ export class CardListingPage {
   constructor(private activedRoute: ActivatedRoute, private cardService: CardService ) { }
 
   ionViewWillEnter() {
-    this.CardDeckGroup = this.activedRoute.snapshot.paramMap.get('CardDeckGroup');
-    this.CardDeck = this.activedRoute.snapshot.paramMap.get('CardDeck');
+    this.CardDeckGroup = this.activedRoute.snapshot.paramMap.get('cardDeckGroup');
+    this.CardDeck = this.activedRoute.snapshot.paramMap.get('cardDeck');
 
     this.cardService.getCardByDeck(this.CardDeckGroup, this.CardDeck).subscribe(
       (cdSrv: Card[]) => {

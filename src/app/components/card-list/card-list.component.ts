@@ -8,10 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardListComponent implements OnInit {
 
   @Input() items: any[];
-
   @Input() listName: string;
-
-
   @Input() navigateTo: any;
 
   generateURL(group: string, deck: string) {

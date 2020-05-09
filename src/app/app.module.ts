@@ -25,7 +25,7 @@ export class AppModule {
   constructor(
     private toastCtrl: ToastController
   ) {
-    this.presentToast();
+    // this.presentToast();
   }
 
 
